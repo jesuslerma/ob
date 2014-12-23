@@ -4,7 +4,7 @@ module Ob
 			module ClassMethods
 				def find(id) 
 					instance = self.new(id)
-					response = Requestor.new.request(:get, instance.url)
+					response = Requestor.new.request(:get, url)
 					response
 				end
 			end

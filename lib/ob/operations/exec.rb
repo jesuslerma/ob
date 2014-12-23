@@ -1,10 +1,10 @@
 module Ob
 	module Operations
-		module Where
+		module Exec
 			module ClassMethods
-				def where(params=nil)
+				def exec(query) 
 					instance = ObObject.new
-					response = Requestor.new.request(:get, url, params)
+					response = Requestor.new.request(:get, url, query)
 					response
 				end
 			end

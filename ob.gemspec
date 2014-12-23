@@ -6,10 +6,10 @@ require 'ob/version'
 Gem::Specification.new do |spec|
   spec.name          = "ob"
   spec.version       = Ob::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.authors       = ["Jesus Lerma Sanchez"]
+  spec.email         = ["shuyojl@gmail.com"]
+  spec.summary       = %q{Ruby library for ob services.}
+  spec.description   = %q{This library provides ob services operations.}
   spec.homepage      = ""
   spec.license       = "MIT"
 

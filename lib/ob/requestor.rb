@@ -1,6 +1,8 @@
 require 'faraday'
 require 'base64'
 require 'json'
+require "rexml/document"
+
 
 module Ob
 	class Requestor
@@ -21,7 +23,11 @@ module Ob
 		def request(meth, url, params=nil)
 			url = self.api_url(url)
 			meth = meth.downcase
-			
+			if params 
+				if params.class != Hash
+					url = url + '?' + params
+				end
+			end
 			begin
 				conn = Faraday.new :url => url do |faraday|
 					faraday.adapter  Faraday.default_adapter
@@ -29,7 +35,9 @@ module Ob
 				end
 				
 				if params 
-					conn.params = params
+					if params.class == Hash
+						conn.params = params
+					end
 				end
 				response = conn.method(meth).call
 
@@ -39,7 +47,11 @@ module Ob
 			if response.status != 200
 				puts "error status code is #{response.status}"
 			end
-			return JSON.parse(response.body)
+			if url.include? "json"
+				return JSON.parse response.body
+			else
+				return response.body
+			end
 		end
 	end
 end

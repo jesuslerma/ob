@@ -2,14 +2,15 @@ require "ob/version"
 
 require 'cgi'
 
-require "ruby_ob/operations/find"
-require "ruby_ob/operations/where"
+require "ob/operations/find"
+require "ob/operations/where"
+require "ob/operations/exec"
 
-require "ruby_ob/ob_object"
-require "ruby_ob/resource"
-require "ruby_ob/product"
-require "ruby_ob/material_mgmt_storage_detail"
-require "ruby_ob/requestor"
+require "ob/ob_object"
+require "ob/resource"
+require "ob/product"
+require "ob/material_mgmt_storage_detail"
+require "ob/requestor"
 
 module Ob
   def self.api_base
