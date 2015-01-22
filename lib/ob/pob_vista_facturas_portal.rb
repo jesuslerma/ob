@@ -1,5 +1,5 @@
 module Ob
-	class pob_vistafacturasportal < Resource
+	class PobVistaFacturasPortal < Resource
 		include Ob::Operations::Find
 		include Ob::Operations::Where
 	end	
