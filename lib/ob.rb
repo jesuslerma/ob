@@ -11,6 +11,7 @@ require "ob/resource"
 require "ob/product"
 require "ob/material_mgmt_storage_detail"
 require "ob/requestor"
+require "ob/pob_vistafacturasportal"
 
 module Ob
   def self.api_base
